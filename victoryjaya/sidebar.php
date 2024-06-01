@@ -108,7 +108,7 @@
           <span style="color: grey; font-weight: bold" onmouseover="this.style.color='#000000'" onmouseout="this.style.color='grey'">Hutang</span>
         </a>
       </li>
-
+      
       <!-- Heading -->
       <?php if ($_SESSION['id'] == 1) { ?>
       <div class="sidebar-heading" style="color: #000000;">
