@@ -167,8 +167,8 @@ $result = mysqli_query($koneksi, $query);
             </nav>
 
             <div class="intro">
-                <h1>Victory Jaya<br>untuk Anda dan Keluarga!</h1>
-                <p>Temukan berbagai macam makanan beku yang lezat, sehat, dan praktis <br>di Victory Jaya</p>
+                <h1>Dedikasi Kami untuk Kelezatan dan Kemudahan Anda</h1>
+                <p>Di Victory Jaya, kami percaya bahwa makanan beku dapat memberikan kelezatan dan kenyamanan tanpa kompromi. Kami berkomitmen untuk menyediakan produk berkualitas tinggi yang memenuhi standar terbaik untuk Anda dan keluarga.</p>
             </div>
         </section>
 
