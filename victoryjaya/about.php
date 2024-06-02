@@ -175,7 +175,7 @@ $result = mysqli_query($koneksi, $query);
         <section class="container about-section">
             <div class="row">
                 <div class="col-lg-6">
-                    <img src="img/fotocatalog/Foto Section 2.png" alt="About Us">
+                    <img src="img/fotocatalog/Section.png" alt="About Us">
                 </div>
                 <div class="col-lg-6">
                     <h2>Tentang Kami</h2>
