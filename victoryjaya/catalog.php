@@ -132,6 +132,10 @@ $result = mysqli_query($koneksi, $query);
                         <li class="nav-item">
                             <a class="nav-link" href="about.php" style="color: #FFFFFF;" id="hover">Tentang Kami</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://linktr.ee/victoryjaya.food" style="color: #FFFFFF;" id="hover" target="_blank">Informasi Pemesanan</a>
+                        </li>
+
                     </ul>
                 </div>
             </nav>
@@ -178,12 +182,12 @@ $result = mysqli_query($koneksi, $query);
 
     <footer class="sticky-footer bg-white">
         <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; 2024 - Victory Jaya Management</a>
-            </span>
-          </div>
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; 2024 - Victory Jaya Management</a>
+                </span>
+            </div>
         </div>
-      </footer>
+    </footer>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

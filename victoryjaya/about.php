@@ -112,6 +112,7 @@ $result = mysqli_query($koneksi, $query);
         .intro h1 {
             font-weight: 800;
         }
+
         .about-section {
             padding: 60px;
             background-color: #f9f9f9;
@@ -158,6 +159,9 @@ $result = mysqli_query($koneksi, $query);
                         <li class="nav-item">
                             <a class="nav-link" href="about.php" style="color: #FFFFFF;" id="hover">Tentang Kami</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://linktr.ee/victoryjaya.food" style="color: #FFFFFF;" id="hover" target="_blank">Informasi Pemesanan</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -169,29 +173,29 @@ $result = mysqli_query($koneksi, $query);
         </section>
 
         <section class="container about-section">
-        <div class="row">
-            <div class="col-lg-6">
-                <img src="img/fotocatalog/Foto Section 2.png" alt="About Us">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="img/fotocatalog/Foto Section 2.png" alt="About Us">
+                </div>
+                <div class="col-lg-6">
+                    <h2>Tentang Kami</h2>
+                    <p>Victory Jaya didirikan dengan visi untuk menginspirasi perjalanan yang tak terlupakan dan menyediakan produk-produk berkualitas tinggi yang memenuhi kebutuhan pelanggan kami. Kami percaya bahwa setiap perjalanan harus menjadi pengalaman yang luar biasa, dan kami berkomitmen untuk menyediakan produk yang akan membantu Anda mencapai hal itu.</p>
+                    <p>Dengan berbagai macam produk yang kami tawarkan, mulai dari peralatan traveling hingga kebutuhan sehari-hari, Victory Jaya adalah tempat yang tepat untuk menemukan apa yang Anda butuhkan. Kami bangga dengan kualitas produk kami dan selalu berusaha untuk memberikan layanan terbaik kepada pelanggan kami.</p>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <h2>Tentang Kami</h2>
-                <p>Victory Jaya didirikan dengan visi untuk menginspirasi perjalanan yang tak terlupakan dan menyediakan produk-produk berkualitas tinggi yang memenuhi kebutuhan pelanggan kami. Kami percaya bahwa setiap perjalanan harus menjadi pengalaman yang luar biasa, dan kami berkomitmen untuk menyediakan produk yang akan membantu Anda mencapai hal itu.</p>
-                <p>Dengan berbagai macam produk yang kami tawarkan, mulai dari peralatan traveling hingga kebutuhan sehari-hari, Victory Jaya adalah tempat yang tepat untuk menemukan apa yang Anda butuhkan. Kami bangga dengan kualitas produk kami dan selalu berusaha untuk memberikan layanan terbaik kepada pelanggan kami.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
 
     </header>
 
     <footer class="sticky-footer bg-white">
         <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; 2024 - Victory Jaya Management</a>
-            </span>
-          </div>
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; 2024 - Victory Jaya Management</a>
+                </span>
+            </div>
         </div>
-      </footer>
+    </footer>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
