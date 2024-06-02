@@ -26,12 +26,13 @@ $result = mysqli_query($koneksi, $query);
 
     <style>
         .card {
-            margin-bottom: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
 
         .card:hover {
@@ -46,44 +47,29 @@ $result = mysqli_query($koneksi, $query);
             object-fit: cover;
         }
 
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            padding: 20px;
+        }
+
         .card-title {
             font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
 
         .card-text {
             font-weight: 400;
             color: #6c757d;
-        }
-
-        .cart-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            color: #0074cc;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .cart-icon:hover {
-            color: #00cc6a;
+            margin-bottom: 20px;
         }
 
         .container {
             padding-top: 20px;
             padding-bottom: 20px;
-        }
-
-        footer {
-            width: 100%;
-            bottom: 0;
-            background: linear-gradient(to right, #0074cc, #00cc6a);
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            color: #fff;
-            padding: 20px;
         }
 
         .list-footer {
@@ -132,9 +118,7 @@ $result = mysqli_query($koneksi, $query);
 <body>
     <header class="header" id="header">
         <section style="position: relative; height: 550px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; overflow: hidden;">
-            <video autoplay loop muted style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1;">
-                <source src="video/vidbg.mp4" type="video/mp4">
-            </video>
+            <img src="img/fotocatalog/Foto Header.jpeg" alt="Background Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: 10%; height: 10%; z-index: -1;">
             <nav>
                 <div>
                     <ul class="nav justify-content-center navbar">
@@ -153,8 +137,8 @@ $result = mysqli_query($koneksi, $query);
             </nav>
 
             <div class="intro">
-                <h1>Your Doorway <br>To Endless Travel Wonders</h1>
-                <p>Ready to redefine your travel experience? Boole is your guide <br>to extraordinary destinations. Click, discover, and wander!</p>
+                <h1>Frozen Food Premium <br>untuk Anda dan Keluarga!</h1>
+                <p>Temukan berbagai macam makanan beku yang lezat, sehat, dan praktis <br>di Victory Jaya</p>
             </div>
         </section>
 
@@ -163,12 +147,12 @@ $result = mysqli_query($koneksi, $query);
                 <div class="row gx-5 align-items-center">
                     <div class="col">
                         <div class="p-3" style="max-width:500px;">
-                            <h2 style="font-weight:600;">Explore all corners of <br> The World with us</h2>
-                            <p>Let's embark on an unforgettable journey around the globe, discovering hidden beauties and experiencing the mesmerizing diversity of cultures together!</p>
+                            <h2 style="font-weight:600;">Kemudahan dan Kelezatan dalam Satu Genggaman</h2>
+                            <p>Eksplorasi katalog lengkap makanan beku berkualitas tinggi kami, dari hidangan utama hingga camilan.</p>
                         </div>
                     </div>
                     <div class="col">
-                        <img src="img/grp1.jpg" alt="explorepic" style="width: 100%; max-width: 100%; height: auto;">
+                        <img src="img/fotocatalog/Foto Section 2.png" alt="explorepic" style="width: 100%; max-width: 100%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -183,16 +167,6 @@ $result = mysqli_query($koneksi, $query);
                             <div class="card-body">
                                 <h5 class="card-title"><?= $row['nama_produk'] ?></h5>
                                 <p class="card-text">Rp<?= number_format($row['harga_produk'], 0, ',', '.') ?></p>
-                                <div class="input-group">
-                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
-                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
-                                <a href="cart.php?add=<?= $row['id_produk'] ?>" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
                             </div>
                         </div>
                     </div>
@@ -202,17 +176,14 @@ $result = mysqli_query($koneksi, $query);
 
     </header>
 
-    <footer>
-        <div class="social-media">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="copyright text-center my-auto">
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
             <span>Copyright &copy; 2024 - Victory Jaya Management</a>
             </span>
           </div>
-    </footer>
+        </div>
+      </footer>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
