@@ -61,9 +61,6 @@ require 'cek-sesi.php';
   $uang = $jumlahmasuk - $jumlahkeluar;
 
   //untuk data chart area
-
-
-
   $sekarang = mysqli_query($koneksi, "SELECT jumlah FROM pemasukan
   WHERE tgl_pemasukan = CURDATE()");
   $sekarang = mysqli_fetch_array($sekarang);
