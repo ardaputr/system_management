@@ -200,7 +200,9 @@ WHERE tgl_pengeluaran = CURDATE() - INTERVAL 7 DAY");
                       <th>Tanggal</th>
                       <th>Jumlah</th>
                       <!-- <th>Sumber</th> -->
-                      <th>Aksi</th>
+                      <?php if (isset($_SESSION['id']) && $_SESSION['id'] == 1) : ?>
+                        <th>Aksi</th>
+                      <?php endif; ?>
                     </tr>
                   </thead>
                   <tbody>
@@ -214,10 +216,12 @@ WHERE tgl_pengeluaran = CURDATE() - INTERVAL 7 DAY");
                         <td><?= $data['tgl_pengeluaran'] ?></td>
                         <td>Rp. <?= number_format($data['jumlah'], 2, ',', '.'); ?></td>
                         <!-- <td><?= $data['id_sumber'] ?></td> -->
-                        <td>
-                          <!-- Button untuk modal -->
-                          <a href="#" type="button" class=" fa fa-edit btn btn-primary btn-md" data-toggle="modal" data-target="#myModal<?php echo $data['id_pengeluaran']; ?>"></a>
-                        </td>
+                        <?php if (isset($_SESSION['id']) && $_SESSION['id'] == 1) : ?>
+                          <td>
+                            <!-- Button untuk modal -->
+                            <a href="#" type="button" class="fa fa-edit btn btn-primary btn-md" data-toggle="modal" data-target="#myModal<?php echo $data['id_pengeluaran']; ?>"></a>
+                          </td>
+                        <?php endif; ?>
                       </tr>
                       <!-- Modal Edit Mahasiswa-->
                       <div class="modal fade" id="myModal<?php echo $data['id_pengeluaran']; ?>" role="dialog">

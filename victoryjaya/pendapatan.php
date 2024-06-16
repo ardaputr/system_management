@@ -107,7 +107,7 @@ require 'cek-sesi.php';
               ?>
             </div>
           </div>
-          
+
           <!-- DataTales Example -->
           <div class="col-xl-8 col-lg-7">
             <button type="button" class="btn btn-success" style="margin:5px" data-toggle="modal" data-target="#myModalTambah"><i class="fa fa-plus"> Pemasukan</i></button><br>
@@ -124,7 +124,9 @@ require 'cek-sesi.php';
                         <th>Tanggal</th>
                         <th>Jumlah</th>
                         <!-- <th>Sumber</th> -->
-                        <th>Aksi</th>
+                        <?php if (isset($_SESSION['id']) && $_SESSION['id'] == 1) : ?>
+                          <th>Aksi</th>
+                        <?php endif; ?>
                       </tr>
                     </thead>
                     <tbody>
@@ -138,10 +140,12 @@ require 'cek-sesi.php';
                           <td><?= $data['tgl_pemasukan'] ?></td>
                           <td>Rp. <?= number_format($data['jumlah'], 2, ',', '.'); ?></td>
                           <!-- <td><?= $data['id_sumber'] ?></td> -->
-                          <td>
-                            <!-- Button untuk modal -->
-                            <a href="#" type="button" class=" fa fa-edit btn btn-primary btn-md" data-toggle="modal" data-target="#myModal<?php echo $data['id_pemasukan']; ?>"></a>
-                          </td>
+                          <?php if (isset($_SESSION['id']) && $_SESSION['id'] == 1) : ?>
+                            <td>
+                              <!-- Button untuk modal -->
+                              <a href="#" type="button" class=" fa fa-edit btn btn-primary btn-md" data-toggle="modal" data-target="#myModal<?php echo $data['id_pemasukan']; ?>"></a>
+                            </td>
+                          <?php endif; ?>
                         </tr>
                         <!-- Modal Edit Mahasiswa-->
                         <div class="modal fade" id="myModal<?php echo $data['id_pemasukan']; ?>" role="dialog">
