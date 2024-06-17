@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Bulan Mei 2024 pada 12.33
+-- Waktu pembuatan: 17 Jun 2024 pada 19.22
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -45,31 +45,6 @@ INSERT INTO `admin` (`id_admin`, `nama`, `email`, `pass`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `catatan`
---
-
-CREATE TABLE `catatan` (
-  `id_catatan` int(11) NOT NULL,
-  `catatan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data untuk tabel `catatan`
---
-
-INSERT INTO `catatan` (`id_catatan`, `catatan`) VALUES
-(1, 'Besok, Hari minggu akan ada kunjungan dari pihak dinas untuk mengecek kinerja karyawan.'),
-(2, 'Hari Kamis jam 8 akan ada rapat, diharapkan kepada semua karyawan agar dapat berhadir.'),
-(3, 'Tingkatkan lagi pendapatan, dan minimalkan pengeluaran'),
-(4, 'tgl 6 domain dan hosting banyak yang akan expired, dan harus diperpanjang lagi'),
-(5, 'HARUS RJAIN BIAR SUKSES'),
-(6, 'Harus Rajin biar sukses'),
-(7, 'done'),
-(8, 'coba');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `hutang`
 --
 
@@ -86,8 +61,8 @@ CREATE TABLE `hutang` (
 --
 
 INSERT INTO `hutang` (`id_hutang`, `jumlah`, `tgl_hutang`, `alasan`, `penghutang`) VALUES
-(18, 50000, '2022-08-20', 'Beli Pertamax', 'Dimas'),
-(19, 15000, '2022-08-19', 'Beli Bakso', 'Agung');
+(18, 50000, '2024-05-21', 'Beli makan', 'Joko'),
+(19, 15000, '2024-06-17', 'Beli Bakso', 'Guntur');
 
 -- --------------------------------------------------------
 
@@ -131,11 +106,8 @@ CREATE TABLE `pemasukan` (
 --
 
 INSERT INTO `pemasukan` (`id_pemasukan`, `tgl_pemasukan`, `jumlah`, `id_sumber`) VALUES
-(1, '0000-00-00', 5550000, 1),
-(6, '2022-08-04', 35500000, 1),
-(7, '2022-08-06', 75800000, 1),
-(13, '2022-08-13', 15000000, 1),
-(14, '2022-08-15', 35000000, 1);
+(46, '2024-05-31', 19890000, 1),
+(47, '0000-00-00', 2350000, 1);
 
 -- --------------------------------------------------------
 
@@ -155,15 +127,16 @@ CREATE TABLE `pengeluaran` (
 --
 
 INSERT INTO `pengeluaran` (`id_pengeluaran`, `tgl_pengeluaran`, `jumlah`, `id_sumber`) VALUES
-(1, '2022-07-15', 7500000, 4),
-(2, '2022-07-16', 25000000, 3),
-(3, '2022-07-11', 5500000, 4),
-(4, '2022-07-12', 250000, 5),
-(5, '2022-08-15', 750000, 6),
+(1, '2024-05-15', 7500000, 6),
+(2, '2024-05-09', 250000, 3),
+(3, '2024-05-24', 5500000, 2),
+(4, '2024-06-14', 250000, 2),
 (28, '2024-05-28', 300000, 2),
 (29, '2024-05-27', 200000, 2),
 (30, '2024-05-27', 40000, 4),
-(31, '2024-05-27', 1500000, 5);
+(31, '2024-05-27', 1500000, 5),
+(32, '2024-06-01', 560000, 1),
+(33, '2024-05-24', 454000, 6);
 
 -- --------------------------------------------------------
 
@@ -184,10 +157,18 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`, `deskripsi_produk`, `foto_produk`) VALUES
-(2, 'Mc Lewis Barbeque', 45000, 'sacue', 'WhatsApp Image 2024-05-26 at 11.16.57.jpeg'),
-(3, 'Mc Lewis Bolognese', 54000, 'sdsd', 'WhatsApp Image 2024-05-26 at 11.16.59 (1).jpeg'),
-(4, 'Mc Lewis Cheese', 34000, 'asdd', 'WhatsApp Image 2024-05-26 at 11.16.59.jpeg'),
-(5, 'Mc Lewis Blackpaper', 46000, 'adddddd', 'WhatsApp Image 2024-05-26 at 11.16.59.jpeg');
+(14, 'BonCabe Cabai Bubuk', 4500, 'BonCabe Cabai Bubuk ini dibuat dari yang cabai pilihan berkualitas yang rasanya benar – benar pedas, dan diproses dengan cara digiling sampai menjadi halus. Teksturnya yang halus dan alami tanpa campuran apapun, menjadikan BonCabe Cabai Bubuk ini cocok dicampurkan ke dalam setiap resep masakan untuk menambah citarasa pedas tanpa mengubah rasa asli makanan. BonCabe Cabai Bubuk praktis, sehingga kamu akan merasakan kemudahan menikmati makanan pedas tanpa harus ribet menghaluskan cabai sendiri. Rasakan dan buktikan sensasi rasa pedas alaminya, BonCabe Cabai Giling lebih praktis dan alami!', 'BubukCabe.jpg'),
+(16, 'Premium Cireng ZEERENG', 21000, '	CIRENG adalah Cemilan kekinian yg di gemari segala usia, Rasanya yg gurih dan Enak membuat ini cocok dijadikan cemilan ,, dengan bumbu rujak atau kuah pedas dapat di pilih sesuai keinginan. Garing di Luar namun lembut didalam.', 'Cireng.png'),
+(17, 'MamaSuka Bumbu Kuah Bakso', 3000, 'Bumbu Kuah Bakso Sapi MamaSuka merupakan bumbu yang terbuat dari bahan pilihan dan memiliki rasa gurih dengan aroma daging sapi yang sedap untuk kelezatan kuah bakso, tanpa harus menambahkan bumbu lainnya.', 'BumbuBakso.jpg'),
+(18, 'Indofood Bumbu Kentang Goreng', 6500, 'INDOFOOD BUMBU KENTANG GORENG KEJU 25 GR\r\n\r\nBumbu Kentang Goreng Indofood membuat cemilan apapun jadi lebih seru, tinggal tuang di atas camilan favorit keluarga, aduk/kocok, dan siap dinikmati.', 'BumbuKentang.png'),
+(19, 'Mazzoni Bumbu Tabur', 5000, 'Mazzoni Bumbu Tabur Balado Ijo memiliki aroma khas balado yang menggugah selera. Rasanya pedas dan gurih, dengan tekstur yang renyah. Cocok untuk berbagai macam camilan, seperti keripik, kerupuk, aneka gorengan, dan bakaran.', 'BumbuTabur.jpeg'),
+(20, 'Kanzler Smoked Beef', 35000, 'Kanzler smoked beef diproduksi oleh PT. Macroprima Panganutama, merupakan irisan daging sapi impor yang diawetkan dengan asap hasil pembakaran kayu. Daging sapi asap kualitas premium yang sangat cocok untuk sajian keluarga atau tamu Anda.', 'Daging.png'),
+(21, 'Kecap Bango', 9000, 'Bango Kecap Manis dibuat sepenuh hati dari perpaduan tepat bahan pilihan berkualitas dari alam: kedelai hitam Mallika, gula, garam dan air. Ciptakan rasa yang benar-benar kecap. Karena rasa tak pernah bohong.', 'Kecap.jpg'),
+(22, 'Kanzler Nugget Bubble Crumb', 33500, 'Kanzler Crispy Chicken Nugget ini terbuat dari daging ayam pilihan dengan bubble crumb yang extra crispy. Nugget kualitas Premium ini cocok dimakan dengan nasi dan dijadikan cemilan bersama teman atau keluarga.', 'Nugget-Kanzler.jpg'),
+(23, 'Ardena Food Otak-Otak Singapor', 27000, 'Otak-Otak Singapore Ardena Food merupakan hasil olahan ikan yang mengandung vitamin, protein dan omega 3, baik untuk kesehatan jantung, menurunkan tekanan darah tinggi, memerangi kolesterol jahat dalam tubuh, meningkatkan daya ingat, dan memperlambat proses penuaan.', 'OtakOtak.png'),
+(24, 'Besto Rolade Sapi', 16500, 'Rolade berkualitas Merk Besto Bentuk Bulat pipih Satu pak isi 27 pcs, berat 500 gram Praktis, sangat cocok dijadikan camilan dan bekal', 'Rolade.jpg'),
+(25, 'Indofood Saos Sambal Peda', 9700, 'ndofood Saus Sambal Extra Pedas adalah produk yang sering digunakan untuk memberikan sentuhan rasa pedas pada berbagai hidangan.', 'Saos.jpg'),
+(26, 'Kanzler Cheese Frankfurter', 45000, 'Sosis matang dengan tekstur daging premium dan bumbu yang halus, disertai potongan keju cheddar', 'Sosis.jpg');
 
 -- --------------------------------------------------------
 
@@ -212,28 +193,6 @@ INSERT INTO `sumber` (`id_sumber`, `nama`) VALUES
 (5, 'Gaji Karyawan'),
 (6, 'Belanja Inventory');
 
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `uang`
---
-
-CREATE TABLE `uang` (
-  `id_uang` int(11) NOT NULL,
-  `tgl_uang` date NOT NULL,
-  `id_pengeluaran` int(11) DEFAULT NULL,
-  `id_pendapatan` int(11) DEFAULT NULL,
-  `jumlah` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data untuk tabel `uang`
---
-
-INSERT INTO `uang` (`id_uang`, `tgl_uang`, `id_pengeluaran`, `id_pendapatan`, `jumlah`) VALUES
-(1, '2019-10-23', NULL, 1, 500000),
-(2, '2019-10-24', 2, NULL, 10000);
-
 --
 -- Indexes for dumped tables
 --
@@ -243,12 +202,6 @@ INSERT INTO `uang` (`id_uang`, `tgl_uang`, `id_pengeluaran`, `id_pendapatan`, `j
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
-
---
--- Indeks untuk tabel `catatan`
---
-ALTER TABLE `catatan`
-  ADD PRIMARY KEY (`id_catatan`);
 
 --
 -- Indeks untuk tabel `hutang`
@@ -289,12 +242,6 @@ ALTER TABLE `sumber`
   ADD PRIMARY KEY (`id_sumber`);
 
 --
--- Indeks untuk tabel `uang`
---
-ALTER TABLE `uang`
-  ADD PRIMARY KEY (`id_uang`);
-
---
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -303,12 +250,6 @@ ALTER TABLE `uang`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT untuk tabel `catatan`
---
-ALTER TABLE `catatan`
-  MODIFY `id_catatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `hutang`
@@ -326,31 +267,25 @@ ALTER TABLE `karyawan`
 -- AUTO_INCREMENT untuk tabel `pemasukan`
 --
 ALTER TABLE `pemasukan`
-  MODIFY `id_pemasukan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_pemasukan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengeluaran`
 --
 ALTER TABLE `pengeluaran`
-  MODIFY `id_pengeluaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_pengeluaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT untuk tabel `sumber`
 --
 ALTER TABLE `sumber`
   MODIFY `id_sumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT untuk tabel `uang`
---
-ALTER TABLE `uang`
-  MODIFY `id_uang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
